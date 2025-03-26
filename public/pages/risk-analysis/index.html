@@ -1,0 +1,154 @@
+<!-- 风险分析页面 -->
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>风险分析</title>
+    <link rel="stylesheet" href="../../assets/css/common.css">
+    <style>
+      /* 增强风险分析页面的可读性 */
+      .dashboard-body {
+        background-color: #001529;
+      }
+      
+      .dashboard-card {
+        background-color: #0c2135;
+        border: 1px solid #1f3a5f;
+        border-radius: 8px;
+        padding: 20px;
+        margin-bottom: 20px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+      }
+      
+      .dashboard-card h2 {
+        color: #ffffff;
+        font-size: 18px;
+        border-bottom: 1px solid #1f3a5f;
+        padding-bottom: 10px;
+        margin-bottom: 15px;
+      }
+      
+      /* 风险指标卡片样式 */
+      .risk-indicators .indicator-item {
+        background-color: rgba(24, 144, 255, 0.1);
+        padding: 15px;
+        border-radius: 6px;
+        margin-bottom: 10px;
+        border: 1px solid rgba(24, 144, 255, 0.3);
+      }
+      
+      .risk-indicators .indicator-item label {
+        display: block;
+        color: #8cc8ff;
+        font-size: 14px;
+        margin-bottom: 5px;
+      }
+      
+      .risk-indicators .indicator-item span {
+        font-size: 20px;
+        font-weight: 600;
+        color: #ffffff;
+      }
+      
+      /* 风险预警样式 */
+      .risk-warnings .warning-item {
+        padding: 12px 15px;
+        border-radius: 6px;
+        margin-bottom: 10px;
+        display: flex;
+        align-items: center;
+      }
+      
+      .risk-warnings .high {
+        background-color: rgba(245, 34, 45, 0.1);
+        border-left: 4px solid #f5222d;
+      }
+      
+      .risk-warnings .medium {
+        background-color: rgba(250, 173, 20, 0.1);
+        border-left: 4px solid #faad14;
+      }
+      
+      .risk-warnings .warning-text {
+        color: #ffffff;
+        font-size: 14px;
+      }
+    </style>
+</head>
+<body class="dark-theme">
+    <div class="container">
+        <header class="page-header">
+            <h1>风险分析</h1>
+            <div class="search-bar">
+                <input type="text" id="stockCode" placeholder="请输入股票代码">
+                <button id="searchBtn">查询</button>
+            </div>
+        </header>
+
+        <div class="content-grid">
+            <!-- 风险评分 -->
+            <div class="card risk-score">
+                <h2>综合风险评分</h2>
+                <div class="score-display">
+                    <div class="score-circle">75</div>
+                    <div class="score-label">中等风险</div>
+                </div>
+            </div>
+
+            <!-- 波动性分析 -->
+            <div class="card volatility-analysis">
+                <h2>波动性分析</h2>
+                <div id="volatilityChart" class="chart-container"></div>
+            </div>
+
+            <!-- 风险指标 -->
+            <div class="card risk-indicators">
+                <h2>风险指标</h2>
+                <div class="indicators-grid">
+                    <div class="indicator-item">
+                        <label>Beta系数</label>
+                        <span>1.25</span>
+                    </div>
+                    <div class="indicator-item">
+                        <label>夏普比率</label>
+                        <span>0.85</span>
+                    </div>
+                    <div class="indicator-item">
+                        <label>最大回撤</label>
+                        <span>-15.6%</span>
+                    </div>
+                    <div class="indicator-item">
+                        <label>年化波动率</label>
+                        <span>22.3%</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 风险预警 -->
+            <div class="card risk-warnings">
+                <h2>风险预警</h2>
+                <div class="warnings-list">
+                    <div class="warning-item high">
+                        <span class="warning-icon">⚠️</span>
+                        <span class="warning-text">股价波动性高于行业平均水平</span>
+                    </div>
+                    <div class="warning-item medium">
+                        <span class="warning-icon">⚠️</span>
+                        <span class="warning-text">市盈率处于历史高位</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 压力测试 -->
+            <div class="card stress-test">
+                <h2>压力测试</h2>
+                <div id="stressTestChart" class="chart-container"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+    <script src="./risk-analysis.js"></script>
+</body>
+</html> 

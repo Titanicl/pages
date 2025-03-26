@@ -1,0 +1,83 @@
+<!-- 大盘分析页面 -->
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>大盘分析</title>
+    <link rel="stylesheet" href="../../assets/css/common.css">
+</head>
+<body class="dark-theme">
+    <div class="container">
+        <header class="page-header">
+            <h1>大盘分析</h1>
+            <div class="time-display" id="currentTime"></div>
+        </header>
+
+        <div class="content-grid">
+            <!-- 指数概览 -->
+            <div class="card market-indices">
+                <h2>主要指数</h2>
+                <div class="indices-grid">
+                    <div class="index-item">
+                        <h3>上证指数</h3>
+                        <span class="price up">3,234.56</span>
+                        <span class="change up">+1.2%</span>
+                    </div>
+                    <div class="index-item">
+                        <h3>深证成指</h3>
+                        <span class="price down">10,234.56</span>
+                        <span class="change down">-0.8%</span>
+                    </div>
+                    <div class="index-item">
+                        <h3>创业板指</h3>
+                        <span class="price up">2,156.78</span>
+                        <span class="change up">+2.1%</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 市场情绪 -->
+            <div class="card market-sentiment">
+                <h2>市场情绪</h2>
+                <div id="sentimentChart" class="chart-container"></div>
+            </div>
+
+            <!-- 行业板块分析 -->
+            <div class="card sector-analysis">
+                <h2>行业板块分析</h2>
+                <div id="sectorHeatmap" class="chart-container"></div>
+            </div>
+
+            <!-- 资金流向 -->
+            <div class="card fund-flow">
+                <h2>资金流向</h2>
+                <div id="fundFlowChart" class="chart-container"></div>
+            </div>
+
+            <!-- 市场宽度 -->
+            <div class="card market-breadth">
+                <h2>市场宽度</h2>
+                <div class="breadth-stats">
+                    <div class="stat-item">
+                        <label>上涨家数</label>
+                        <span class="up">1234</span>
+                    </div>
+                    <div class="stat-item">
+                        <label>下跌家数</label>
+                        <span class="down">789</span>
+                    </div>
+                    <div class="stat-item">
+                        <label>平盘家数</label>
+                        <span>123</span>
+                    </div>
+                </div>
+                <div id="marketBreadthChart" class="chart-container"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+    <script src="./market-analysis.js"></script>
+</body>
+</html> 

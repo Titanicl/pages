@@ -1,0 +1,77 @@
+<!-- 关联个股分析页面 -->
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>关联个股分析</title>
+    <link rel="stylesheet" href="../../assets/css/common.css">
+</head>
+<body class="dark-theme">
+    <div class="container">
+        <header class="page-header">
+            <h1>关联个股分析</h1>
+            <div class="search-bar">
+                <input type="text" id="stockCode" placeholder="请输入股票代码">
+                <button id="searchBtn">查询</button>
+            </div>
+        </header>
+
+        <div class="content-grid">
+            <!-- 目标股票信息 -->
+            <div class="card target-stock">
+                <h2>目标股票</h2>
+                <div class="stock-info">
+                    <h3>阿里巴巴 (BABA)</h3>
+                    <div class="price-info">
+                        <span class="current-price">¥86.42</span>
+                        <span class="price-change up">+2.31 (+2.75%)</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 相关性分析 -->
+            <div class="card correlation-analysis">
+                <h2>相关性分析</h2>
+                <div id="correlationChart" class="chart-container"></div>
+            </div>
+
+            <!-- 同行业对比 -->
+            <div class="card industry-comparison">
+                <h2>同行业对比</h2>
+                <div class="comparison-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>股票名称</th>
+                                <th>最新价</th>
+                                <th>涨跌幅</th>
+                                <th>市值</th>
+                                <th>市盈率</th>
+                            </tr>
+                        </thead>
+                        <tbody id="comparisonTableBody">
+                            <!-- 数据将通过JavaScript动态插入 -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- 板块联动 -->
+            <div class="card sector-linkage">
+                <h2>板块联动分析</h2>
+                <div id="sectorLinkageChart" class="chart-container"></div>
+            </div>
+
+            <!-- 资金流向对比 -->
+            <div class="card fund-flow-comparison">
+                <h2>资金流向对比</h2>
+                <div id="fundFlowComparisonChart" class="chart-container"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+    <script src="./related-stocks.js"></script>
+</body>
+</html>

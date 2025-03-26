@@ -1,0 +1,188 @@
+/* 全局样式 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background-color: #0a1929;
+    color: #fff;
+}
+
+.dashboard {
+    padding: 20px;
+    min-height: 100vh;
+}
+
+/* 大屏专用样式 */
+.dashboard-body {
+    background-color: #001529;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+.dashboard-container {
+    width: 100%;
+    max-width: 100%;
+    padding: 20px;
+}
+
+.dashboard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #1f3a5f;
+}
+
+.dashboard-header h1 {
+    font-size: 28px;
+    color: #fff;
+    text-shadow: 0 0 10px rgba(24, 144, 255, 0.5);
+}
+
+.dashboard-header .time-display {
+    background-color: rgba(24, 144, 255, 0.2);
+    color: #fff;
+    padding: 8px 15px;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto;
+    gap: 20px;
+}
+
+.dashboard-card {
+    background-color: #0c2135;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    border: 1px solid #1f3a5f;
+}
+
+.dashboard-card h2 {
+    color: #fff;
+    font-size: 18px;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #1f3a5f;
+}
+
+.dashboard-chart {
+    width: 100%;
+    height: 300px;
+}
+
+/* 特定卡片尺寸 */
+.market-overview {
+    grid-column: span 2;
+}
+
+.hot-sectors {
+    grid-column: span 1;
+    grid-row: span 1;
+}
+
+.fund-flow {
+    grid-column: span 1;
+    grid-row: span 1;
+}
+
+.hot-stocks {
+    grid-column: span 2;
+}
+
+.market-sentiment, .volume-analysis {
+    grid-column: span 1;
+}
+
+/* 指数项样式 */
+.dashboard-card .indices-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.dashboard-card .index-item {
+    background-color: rgba(24, 144, 255, 0.1);
+    padding: 15px;
+    border-radius: 4px;
+    text-align: center;
+    border: 1px solid rgba(24, 144, 255, 0.3);
+}
+
+.dashboard-card .index-item h3 {
+    font-size: 14px;
+    margin-bottom: 8px;
+    color: #8cc8ff;
+}
+
+.dashboard-card .index-item .price {
+    display: block;
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+/* 表格样式 */
+.dashboard-card table {
+    width: 100%;
+    border-collapse: collapse;
+    color: #fff;
+}
+
+.dashboard-card th, .dashboard-card td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #1f3a5f;
+}
+
+.dashboard-card th {
+    background-color: rgba(24, 144, 255, 0.1);
+    font-weight: 500;
+    color: #8cc8ff;
+}
+
+.dashboard-card tr:hover {
+    background-color: rgba(24, 144, 255, 0.05);
+}
+
+/* 响应式布局 */
+@media (max-width: 1200px) {
+    .dashboard-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .market-overview, .hot-stocks {
+        grid-column: span 2;
+    }
+}
+
+@media (max-width: 768px) {
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .dashboard-card {
+        grid-column: span 1 !important;
+    }
+    
+    .dashboard-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .dashboard-header .time-display {
+        margin-top: 10px;
+    }
+} 

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>数据大屏</title>
+    <link rel="stylesheet" href="../../assets/css/common.css">
+    <link rel="stylesheet" href="../../assets/css/dashboard.css">
+    <style>
+        /* 确保图表容器有高度 */
+        .dashboard-chart {
+            width: 100%;
+            height: 300px !important;
+            min-height: 300px;
+        }
+    </style>
+</head>
+<body class="dashboard-body">
+    <div class="dashboard-container">
+        <header class="dashboard-header">
+            <h1>股市实时监控大屏</h1>
+            <div class="time-display" id="currentTime"></div>
+        </header>
+
+        <div class="dashboard-grid">
+            <!-- 市场概览 -->
+            <div class="dashboard-card market-overview">
+                <h2>市场概览</h2>
+                <div class="indices-grid">
+                    <div class="index-item">
+                        <h3>上证指数</h3>
+                        <span class="price up">3,234.56</span>
+                        <span class="change up">+1.2%</span>
+                    </div>
+                    <div class="index-item">
+                        <h3>深证成指</h3>
+                        <span class="price down">10,234.56</span>
+                        <span class="change down">-0.8%</span>
+                    </div>
+                    <div class="index-item">
+                        <h3>创业板指</h3>
+                        <span class="price up">2,156.78</span>
+                        <span class="change up">+2.1%</span>
+                    </div>
+                </div>
+                <div id="marketOverviewChart" class="dashboard-chart"></div>
+            </div>
+
+            <!-- 热门板块 -->
+            <div class="dashboard-card hot-sectors">
+                <h2>热门板块</h2>
+                <div id="sectorHeatmap" class="dashboard-chart"></div>
+            </div>
+
+            <!-- 大盘资金流向 -->
+            <div class="dashboard-card fund-flow">
+                <h2>大盘资金流向</h2>
+                <div id="fundFlowChart" class="dashboard-chart"></div>
+            </div>
+
+            <!-- 热门个股 -->
+            <div class="dashboard-card hot-stocks">
+                <h2>热门个股</h2>
+                <div class="stock-list">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>股票名称</th>
+                                <th>最新价</th>
+                                <th>涨跌幅</th>
+                                <th>成交量</th>
+                            </tr>
+                        </thead>
+                        <tbody id="hotStocksBody">
+                            <!-- 数据将通过JavaScript动态插入 -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- 市场情绪 -->
+            <div class="dashboard-card market-sentiment">
+                <h2>市场情绪</h2>
+                <div id="sentimentGauge" class="dashboard-chart"></div>
+            </div>
+
+            <!-- 交易量分析 -->
+            <div class="dashboard-card volume-analysis">
+                <h2>交易量分析</h2>
+                <div id="volumeAnalysisChart" class="dashboard-chart"></div>
+            </div>
+        </div>
+
+        <!-- 添加调试信息 -->
+        <div id="debug-info" style="display: none; position: fixed; bottom: 10px; right: 10px; background: rgba(0,0,0,0.7); color: white; padding: 10px; max-width: 400px; max-height: 200px; overflow: auto; z-index: 9999;"></div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+    <!-- 添加调试辅助函数 -->
+    <script>
+        // 简单的调试日志函数
+        function debugLog(msg) {
+            console.log(msg);
+            const debugEl = document.getElementById('debug-info');
+            if (debugEl) {
+                debugEl.style.display = 'block';
+                debugEl.innerHTML += `<div>${msg}</div>`;
+                debugEl.scrollTop = debugEl.scrollHeight;
+            }
+        }
+        
+        // 显示调试信息
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'D' && e.ctrlKey) {
+                const debugEl = document.getElementById('debug-info');
+                if (debugEl) {
+                    debugEl.style.display = debugEl.style.display === 'none' ? 'block' : 'none';
+                }
+            }
+        });
+    </script>
+    <script src="./dashboard.js"></script>
+</body>
+</html> 

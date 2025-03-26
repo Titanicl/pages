@@ -1,0 +1,103 @@
+<!-- 个股基本情况分析页面 -->
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>个股分析</title>
+    <link rel="stylesheet" href="../../assets/css/common.css">
+</head>
+<body class="dark-theme">
+    <div class="container">
+        <header class="page-header">
+            <h1>个股基本情况分析</h1>
+            <div class="search-bar">
+                <input type="text" id="stockCode" placeholder="请输入股票代码">
+                <button id="searchBtn">查询</button>
+            </div>
+        </header>
+
+        <div class="content-grid">
+            <!-- 基本信息卡片 -->
+            <div class="card stock-info">
+                <h2>公司基本信息</h2>
+                <div class="info-content">
+                    <div class="info-item">
+                        <label>股票名称</label>
+                        <span>阿里巴巴</span>
+                    </div>
+                    <div class="info-item">
+                        <label>股票代码</label>
+                        <span>BABA</span>
+                    </div>
+                    <div class="info-item">
+                        <label>所属行业</label>
+                        <span>互联网服务</span>
+                    </div>
+                    <div class="info-item">
+                        <label>总市值</label>
+                        <span>2.31万亿</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 价格走势图 -->
+            <div class="card price-trend">
+                <h2>价格走势</h2>
+                <div id="priceTrendChart" class="chart-container"></div>
+            </div>
+
+            <!-- 财务指标 -->
+            <div class="card financial-metrics">
+                <h2>主要财务指标</h2>
+                <div class="metrics-grid">
+                    <div class="metric-item">
+                        <label>市盈率(PE)</label>
+                        <span>16.8</span>
+                    </div>
+                    <div class="metric-item">
+                        <label>市净率(PB)</label>
+                        <span>2.4</span>
+                    </div>
+                    <div class="metric-item">
+                        <label>每股收益</label>
+                        <span>5.23</span>
+                    </div>
+                    <div class="metric-item">
+                        <label>净资产收益率</label>
+                        <span>15.6%</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 交易数据 -->
+            <div class="card trading-data">
+                <h2>交易数据</h2>
+                <div id="volumeChart" class="chart-container"></div>
+            </div>
+
+            <!-- 技术指标 -->
+            <div class="card technical-indicators">
+                <h2>技术指标分析</h2>
+                <div class="indicators-grid">
+                    <div class="indicator-item">
+                        <h3>MACD</h3>
+                        <div id="macdChart" class="mini-chart"></div>
+                    </div>
+                    <div class="indicator-item">
+                        <h3>KDJ</h3>
+                        <div id="kdjChart" class="mini-chart"></div>
+                    </div>
+                    <div class="indicator-item">
+                        <h3>RSI</h3>
+                        <div id="rsiChart" class="mini-chart"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+    <script src="./stock-analysis.js"></script>
+</body>
+</html> 

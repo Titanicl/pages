@@ -1,0 +1,88 @@
+<!-- ç çŠśćĽĺçćéĄľé˘ -->
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>研究报告生成</title>
+    <link rel="stylesheet" href="../../assets/css/common.css">
+</head>
+<body class="dark-theme">
+    <div class="container">
+        <header class="page-header">
+            <h1>研究报告生成</h1>
+            <div class="search-bar">
+                <input type="text" id="stockCode" placeholder="股票代码">
+                <button id="generateBtn">生成报告</button>
+            </div>
+        </header>
+
+        <div class="content-grid">
+            <!-- ćĽĺéç˝Ž -->
+            <div class="card report-config">
+                <h2>报告配置</h2>
+                <div class="config-form">
+                    <div class="form-group">
+                        <label>报告类型</label>
+                        <select id="reportType">
+                            <option value="comprehensive">综合报告</option>
+                            <option value="technical">技术分析报告</option>
+                            <option value="fundamental">基本面分析报告</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>分析周期</label>
+                        <select id="analysisPeriod">
+                            <option value="1m">一个月</option>
+                            <option value="3m">三个月</option>
+                            <option value="6m">六个月</option>
+                            <option value="1y">一年</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>分析内容</label>
+                        <div class="checkbox-group">
+                            <label><input type="checkbox" value="basic"> 基本面分析</label>
+                            <label><input type="checkbox" value="technical"> 技术分析</label>
+                            <label><input type="checkbox" value="industry"> 行业分析</label>
+                            <label><input type="checkbox" value="risk"> 风险分析</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ćĽĺé˘č§ -->
+            <div class="card report-preview">
+                <h2>报告预览</h2>
+                <div class="preview-content">
+                    <div class="report-header">
+                        <h3>报告标题 (股票代码)</h3>
+                        <p class="report-meta">报告生成时间</p>
+                    </div>
+                    <div class="report-body">
+                        <section class="report-section">
+                            <h4>报告小标题</h4>
+                            <p class="recommendation">推荐结论</p>
+                            <p class="summary">报告摘要</p>
+                        </section>
+                        <!-- ĺśäťćĽĺĺĺŽšĺ°éčżJavaScriptĺ¨ćçć?-->
+                    </div>
+                </div>
+            </div>
+
+            <!-- ĺŻźĺşééĄš -->
+            <div class="card export-options">
+                <h2>导出选项</h2>
+                <div class="export-buttons">
+                    <button class="export-btn pdf">导出为PDF</button>
+                    <button class="export-btn word">导出为Word</button>
+                    <button class="export-btn excel">导出为Excel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+    <script src="./report-generation.js"></script>
+</body>
+</html> 

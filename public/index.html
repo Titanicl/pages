@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>股票AI分析助手</title>
+    <link rel="stylesheet" href="assets/css/common.css">
+    <style>
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+        
+        .menu-item {
+            background: white;
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .menu-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        
+        .menu-item a {
+            text-decoration: none;
+            color: #333;
+            display: block;
+        }
+        
+        .menu-item h2 {
+            margin-bottom: 10px;
+            color: #1890ff;
+        }
+        
+        .menu-item p {
+            color: #666;
+        }
+    </style>
+</head>
+<body class="dark-theme">
+    <div class="container">
+        <header class="page-header">
+            <h1>股票AI分析助手</h1>
+        </header>
+        
+        <div class="menu-grid">
+            <div class="menu-item">
+                <a href="pages/stock-analysis/index.html">
+                    <h2>个股基本情况分析</h2>
+                    <p>查看个股基本面、技术指标和交易数据</p>
+                </a>
+            </div>
+            
+            <div class="menu-item">
+                <a href="pages/market-analysis/index.html">
+                    <h2>大盘分析</h2>
+                    <p>分析市场整体情况、行业板块和资金流向</p>
+                </a>
+            </div>
+            
+            <div class="menu-item">
+                <a href="pages/related-stocks/index.html">
+                    <h2>关联个股分析</h2>
+                    <p>发现相关股票、板块联动和资金流向对比</p>
+                </a>
+            </div>
+            
+            <div class="menu-item">
+                <a href="pages/risk-analysis/index.html">
+                    <h2>风险分析</h2>
+                    <p>评估投资风险、波动性和压力测试</p>
+                </a>
+            </div>
+            
+            <div class="menu-item">
+                <a href="pages/report-generation/index.html">
+                    <h2>研究报告生成</h2>
+                    <p>生成专业投资研究报告</p>
+                </a>
+            </div>
+            
+            <div class="menu-item">
+                <a href="pages/dashboard/index.html">
+                    <h2>数据大屏</h2>
+                    <p>实时监控市场动态和关键指标</p>
+                </a>
+            </div>
+        </div>
+    </div>
+</body>
+</html> 
